@@ -161,6 +161,26 @@ class UsersList extends Component {
 
 const mapStateToProps = (state) => {
     const { users } = state;
+    const { usersList } = users;
+
+    var transformedUsers = users;
+
+    if(usersList){
+        const sortedUsers = usersList.sort((user1, user2) => {
+            if(user1.name < user2.name){
+                return -1;
+            } else if (user1.name > user2.name){
+                return 1;
+            }
+
+            return 0;
+        });
+
+        transformedUsers = {
+            ...users,
+            usersList: sortedUsers
+        };
+    }
 
     if(users && users.usersList){
         const { usersList } = users;
@@ -168,18 +188,16 @@ const mapStateToProps = (state) => {
         const loggedInId = localStorage.getItem(LOGGED_IN);
         const loggedInUser = usersList.find(({ id }) => id.toString() === loggedInId);
 
-        const transformedUsers = {
-            ...users,
-            loggedInUser
-        };
-
-        return {
-            ...state,
-            users: transformedUsers
+        transformedUsers = {
+            ...transformedUsers,
+            loggedInUser,
         };
     }
 
-    return state;
+    return {
+        ...state,
+        users: transformedUsers
+    };
 };
 
 export default connect(
