@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers, fetchGroups } from '../actions';
 import LogIn from './LogIn';
 import UsersList from './UsersList';
 import { LOGGED_IN } from '../constants';

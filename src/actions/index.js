@@ -9,22 +9,22 @@ import {
     LOGOUT_USER,
     UPDATE_USER
 } from './types';
-import { LOGGED_IN, TRUE } from '../constants';
+import { LOGGED_IN } from '../constants';
 
 export const loginUser = ({ name, password }) => async(dispatch) => {
     try {
         const response = await api.get('/users');
         const { data } = response;
 
-        const match = data.find((user) => user.name === name && user.password === password);
+        const user = data.find((user) => user.name === name && user.password === password);
 
         dispatch({
             type: LOGIN_USER,
-            payload: !!match
+            payload: !!user
         });
 
-        if(match){
-            localStorage.setItem(LOGGED_IN, TRUE);
+        if(user){
+            localStorage.setItem(LOGGED_IN, user.id);
             history.push('/');
         }
     } catch (e) {
