@@ -29,7 +29,7 @@ class App extends Component {
     };
 
     render() {
-        const { users: { loggedInUser } } = this.props;
+        const { users: { loggedInUser, invalidCredentials } } = this.props;
 
         if(loggedInUser){
             return (
@@ -43,7 +43,7 @@ class App extends Component {
         return (
             <div className="ui container">
                 <Header isLoggedIn={!!loggedInUser}/>
-                <LogIn handleLogIn={this.handleLogIn} isLoggedIn={!!loggedInUser}/>
+                <LogIn handleLogIn={this.handleLogIn} invalidCredentials={invalidCredentials}/>
             </div>
         );
     }

@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/usersReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572462790689</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Migrate Log Out Logic to Action">
+      <created>1572464108590</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572464108590</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +162,7 @@
     <MESSAGE value="Responsive Design" />
     <MESSAGE value="Re-Render When LogIn/LogOut" />
     <MESSAGE value="Image Icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image Icon" />
+    <MESSAGE value="Migrate Log Out Logic to Action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate Log Out Logic to Action" />
   </component>
 </project>

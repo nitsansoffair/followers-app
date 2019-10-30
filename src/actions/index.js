@@ -5,7 +5,8 @@ import {
     FETCH_USERS,
     LOGIN_USER,
     LOGOUT_USER,
-    UPDATE_USER
+    UPDATE_USER,
+    LOGIN_USER_INVALID
 } from './types';
 import { LOGGED_IN } from '../constants';
 
@@ -16,14 +17,20 @@ export const loginUser = ({ name, password }) => async(dispatch) => {
 
         const user = data.find((user) => user.name === name && user.password === password);
 
-        dispatch({
-            type: LOGIN_USER,
-            payload: user
-        });
-
         if(user){
+            dispatch({
+                type: LOGIN_USER,
+                payload: user
+            });
+
             localStorage.setItem(LOGGED_IN, user.id);
+
             history.push('/');
+        } else {
+            dispatch({
+                type: LOGIN_USER_INVALID,
+                payload: ''
+            });
         }
     } catch (e) {
         console.log(e);

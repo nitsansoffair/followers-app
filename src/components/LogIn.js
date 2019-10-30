@@ -9,17 +9,12 @@ class LogIn extends Component {
         const { handleLogIn } = this.props;
 
         handleLogIn(formValues);
-
-        this.setState({
-            formSubmitted: true
-        });
     };
 
     renderErrorMessage(){
-        const { isLoggedIn } = this.props;
-        const { formSubmitted } = this.state;
+        const { invalidCredentials } = this.props;
 
-        if(!isLoggedIn && formSubmitted){
+        if(invalidCredentials){
             return (
                 <div className="error">
                     <p>

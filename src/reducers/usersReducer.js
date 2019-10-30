@@ -3,7 +3,7 @@ import {
     LOGIN_USER,
     FETCH_USER,
     LOGOUT_USER,
-    UPDATE_USER
+    UPDATE_USER, LOGIN_USER_INVALID
 } from '../actions/types';
 
 export default(state = {}, action) => {
@@ -11,7 +11,13 @@ export default(state = {}, action) => {
         case LOGIN_USER:
             return {
                 ...state,
-                loggedInUser: action.payload
+                loggedInUser: action.payload,
+                invalidCredentials: false
+            };
+        case LOGIN_USER_INVALID:
+            return {
+                ...state,
+                invalidCredentials: true
             };
         case LOGOUT_USER:
             return {
