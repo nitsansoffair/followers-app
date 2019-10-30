@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/followersContext.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572464841116</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Hover Unfollow Effect">
+      <created>1572467318555</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572467318555</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +175,7 @@
     <MESSAGE value="Image Icon" />
     <MESSAGE value="Migrate Log Out Logic to Action" />
     <MESSAGE value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
+    <MESSAGE value="Hover Unfollow Effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hover Unfollow Effect" />
   </component>
 </project>

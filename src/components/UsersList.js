@@ -73,7 +73,6 @@ class UsersList extends Component {
                         className={`ui button ${extraClass}`}
                         onClick={() => this.toggleFollow(user, follow)}
                         data-hover="Unfollow"
-                        data-active={buttonText}
                     >
                         <span>
                             {buttonText}
