@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchUsers, fetchGroups } from '../actions';
 import LogIn from './LogIn';
 import UsersList from './UsersList';
 import { LOGGED_IN } from '../constants';
@@ -20,4 +22,9 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = state => state;
+
+export default connect(
+    mapStateToProps,
+    {  }
+)(App);
