@@ -58,10 +58,14 @@ class UsersList extends Component {
     };
 
     renderFollowButton(user, follow){
+        const classNames = follow ? 'ui button' : 'ui button following';
+
         return (
-            <button className="ui button" onClick={() => this.toggleFollow(user, follow)}>
-                {follow ? 'Follow' : 'Following'}
-            </button>
+            <div className="content name">
+                <button className={classNames} onClick={() => this.toggleFollow(user, follow)}>
+                    {follow ? 'Follow' : 'Following'}
+                </button>
+            </div>
         );
     }
 
@@ -79,13 +83,13 @@ class UsersList extends Component {
                 return (
                     <div className="item" key={key}>
                         <i className="fas fa-user"/>
-                        <div className="content">
+                        <div className="content name">
                             {name}
                         </div>
+                        {this.renderGroupName(group_id)}
                         <div className="content">
                             {followers.length}
                         </div>
-                        {this.renderGroupName(group_id)}
                         {this.renderFollowButton(user, follow)}
                     </div>
                 );
@@ -95,10 +99,40 @@ class UsersList extends Component {
         return null;
     }
 
+    renderHello(){
+        const { userLoggedIn } = this.props;
+
+        if(userLoggedIn){
+            const { name } = userLoggedIn;
+
+            return (
+                <h3>
+                    Welcome, {name}
+                </h3>
+            );
+        }
+
+        return null;
+    }
+
     render() {
         return (
-            <div>
-                <h1>Users List</h1>
+            <div className="ui celled list">
+                {this.renderHello()}
+                <h2>Choose Users to follow</h2>
+                <div className="item title">
+                    <i className="fas fa-user display-none"/>
+                    <div className="content name">
+                        Name
+                    </div>
+                    <div className="content">
+                        Group Name
+                    </div>
+                    <div className="content">
+                        # Followers
+                    </div>
+                    <div className="content name"/>
+                </div>
                 {this.renderList()}
             </div>
         );

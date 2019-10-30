@@ -1,3 +1,16 @@
+// Page Container
+.ui.container {
+    margin: 25px 100px !important;
+
+    @media (max-width: 800px) {
+        margin: 25px 50px !important;
+    }
+
+    @media (max-width: 450px) {
+        margin: 25px 25px !important;
+    }
+}
+
 // Form inputs
 .ui.form {
     input:not([type]), input[type=text] {
@@ -23,11 +36,27 @@
 // Form buttons
 .ui.button {
     background: none;
-    color: black;
+    color: orange;
+    width: 90px;
+    padding: 12px;
     border: 1px solid black;
 
+    &.following {
+        color: green;
+    }
+
+    @media (max-width: 800px) {
+        padding: 10px;
+    }
+
+    @media (max-width: 650px) {
+        width: 80px;
+        padding: 7px;
+    }
+
     @media (max-width: 450px) {
-        padding: 12px 15px;
+        width: 75px;
+        padding: 4px;
     }
 
     &:hover {
@@ -39,5 +68,109 @@
         background: black;
         color: white;
         opacity: .7;
+    }
+}
+
+// Users list
+.ui.celled.list>.item {
+    border-top: none;
+    padding: 8px 0;
+    display: flex;
+
+    &.title {
+        font-weight: 700;
+    }
+
+    &:first-child {
+        padding: 8px 0;
+    }
+
+    &:last-child {
+        border-bottom: none;
+        padding: 8px 0;
+    }
+
+    &>.content{
+        width: 250px;
+        text-align: center;
+        font-size: 18px;
+
+        &.name {
+            text-align: unset !important;
+        }
+
+        @media (max-width: 650px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 450px) {
+            font-size: 12px;
+        }
+    }
+
+    i {
+        margin: 3px 8px 0 0;
+
+        @media (max-width: 650px) {
+            margin: 1.5px 8px 0 0;
+        }
+
+        @media (max-width: 450px) {
+            margin: .5px 8px 0 0;
+        }
+
+        &.display-none {
+            opacity: 0;
+        }
+    }
+}
+
+
+// Navbar
+.ui.menu:not(.vertical) .right.menu {
+    margin-right: auto;
+    font-size: 18px;
+
+    @media (max-width: 450px) {
+        font-size: 14px;
+    }
+}
+
+// Navbar
+.ui.secondary.pointing.menu {
+    border-bottom: none;
+
+    a.item:hover {
+        border-color: #1b1c1d;
+        font-weight: 700;
+        opacity: 1;
+    }
+
+    div.item {
+        font-weight: 700;
+    }
+
+    .item {
+        margin: 0 20px;
+        padding: 15px 0;
+
+        @media (max-width: 450px) {
+            margin: 0 12px;
+        }
+
+        // Itune Logo
+        img {
+            height: 33px;
+            width: 33px;
+        }
+
+        &.img-item {
+            padding: 8px 0 !important;
+
+            &:hover {
+                border-color: white;
+                opacity: .6;
+            }
+        }
     }
 }

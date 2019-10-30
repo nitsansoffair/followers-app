@@ -15,6 +15,7 @@ class LogIn extends Component {
     renderErrorMessage(){
         const { users: { loggedIn } } = this.props;
 
+        // TODO - Fix Logged In Error
         if(!loggedIn){
             return (
                 <div className="error">
@@ -29,6 +30,9 @@ class LogIn extends Component {
     render() {
         return (
             <div>
+                <h3>
+                    Must be signed in
+                </h3>
                 <h1>Log In</h1>
                 <Form onSubmit={this.onSubmit} submit_text="Log In"/>
                 {this.renderErrorMessage()}

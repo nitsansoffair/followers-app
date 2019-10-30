@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from './Header';
 import LogIn from './LogIn';
 import UsersList from './UsersList';
 import { LOGGED_IN } from '../constants';
@@ -11,12 +12,18 @@ class App extends Component {
 
         if(loggedIn){
             return (
-                <UsersList/>
+                <div className="ui container">
+                    <Header loggedIn={loggedIn}/>
+                    <UsersList/>
+                </div>
             );
         }
 
         return (
-            <LogIn/>
+            <div className="ui container">
+                <Header loggedIn={loggedIn}/>
+                <LogIn/>
+            </div>
         );
     }
 }
