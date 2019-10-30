@@ -155,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572467434953</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Image Icon">
+      <created>1572467596331</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1572467596331</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Image Icon">
+      <created>1572467605061</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572467605061</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,11 +191,11 @@
     <MESSAGE value="Users List Render" />
     <MESSAGE value="Responsive Design" />
     <MESSAGE value="Re-Render When LogIn/LogOut" />
-    <MESSAGE value="Image Icon" />
     <MESSAGE value="Migrate Log Out Logic to Action" />
     <MESSAGE value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
     <MESSAGE value="Hover Unfollow Effect" />
     <MESSAGE value="Code Styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Styling" />
+    <MESSAGE value="Image Icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image Icon" />
   </component>
 </project>
