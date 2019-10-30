@@ -1,0 +1,43 @@
+// Form inputs
+.ui.form {
+    input:not([type]), input[type=text] {
+        width: 350px;
+
+        &:focus {
+            border: 1px solid black;
+        }
+
+        @media (max-width: 450px) {
+            width: 250px;
+        }
+    }
+}
+
+// Error message
+.error {
+  color: black;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+// Form buttons
+.ui.button {
+    background: none;
+    color: black;
+    border: 1px solid black;
+
+    @media (max-width: 450px) {
+        padding: 12px 15px;
+    }
+
+    &:hover {
+        background: black;
+        color: white;
+    }
+
+    &:focus {
+        background: black;
+        color: white;
+        opacity: .7;
+    }
+}
