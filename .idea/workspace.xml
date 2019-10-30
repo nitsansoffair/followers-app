@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572464108590</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Migrate Invalid Credentials Error to Actions &amp; Reducers">
+      <created>1572464841116</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572464841116</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +168,7 @@
     <MESSAGE value="Re-Render When LogIn/LogOut" />
     <MESSAGE value="Image Icon" />
     <MESSAGE value="Migrate Log Out Logic to Action" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate Log Out Logic to Action" />
+    <MESSAGE value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
   </component>
 </project>

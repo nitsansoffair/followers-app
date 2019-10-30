@@ -59,17 +59,25 @@ class UsersList extends Component {
 
     renderFollowButton(user, follow){
         // TODO - Unfollow on following hover
-
         const { users: { loggedInUser } } = this.props;
 
         const extraClass = follow ? 'follow' : 'following';
         const display = loggedInUser && loggedInUser.id !== user.id;
 
         if(display){
+            const buttonText = follow ? 'Follow' : 'Following';
+
             return (
                 <div className="content name">
-                    <button className={`ui button ${extraClass}`} onClick={() => this.toggleFollow(user, follow)}>
-                        {follow ? 'Follow' : 'Following'}
+                    <button
+                        className={`ui button ${extraClass}`}
+                        onClick={() => this.toggleFollow(user, follow)}
+                        data-hover="Unfollow"
+                        data-active={buttonText}
+                    >
+                        <span>
+                            {buttonText}
+                        </span>
                     </button>
                 </div>
             );

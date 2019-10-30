@@ -38,6 +38,7 @@
     background: none;
     width: 90px;
     padding: 12px;
+    position: relative;
     border: 1px solid black;
 
     &.display-none, &.display-none:hover, &.display-none:focus {
@@ -60,6 +61,7 @@
 
     &.follow {
         color: orange;
+        border: 1px solid orange;
 
         &:hover {
             background: orange;
@@ -75,16 +77,48 @@
 
     &.following {
         color: green;
+        border: 1px solid green;
 
         &:hover {
-            background: green;
-            color: white;
+            background: white;
+            border: 1px solid red;
         }
 
         &:focus {
-            background: green;
-            color: white;
+            background: white;
+            color: green;
             opacity: .7;
+        }
+
+        // Hover Change Text Effect
+        & span {
+            transition: .2s;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        &:before {
+            content: attr(data-hover);
+        }
+
+        &:after {
+            content: attr(data-active);
+        }
+
+        &:hover span, &:active span {
+            opacity: 0;
+        }
+
+        &:hover:before, &:active:after {
+            opacity: 1;
+            transition-delay: .1s;
+            color: red;
         }
     }
 
