@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
@@ -105,7 +104,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572447984677</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Responsive Design">
+      <created>1572457053019</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572457053019</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Responsive Design">
+      <created>1572457059878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572457059878</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +138,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove Create-React-App Inital Files" />
     <MESSAGE value="Users List Render" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users List Render" />
+    <MESSAGE value="Responsive Design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Responsive Design" />
   </component>
 </project>

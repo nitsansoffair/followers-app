@@ -36,13 +36,56 @@
 // Form buttons
 .ui.button {
     background: none;
-    color: orange;
     width: 90px;
     padding: 12px;
     border: 1px solid black;
 
+    &.display-none, &.display-none:hover, &.display-none:focus {
+        opacity: 0;
+        height: 40px;
+        cursor: unset;
+
+        @media (max-width: 800px) {
+            height: 36px;
+        }
+
+        @media (max-width: 650px) {
+            height: 30px;
+        }
+
+        @media (max-width: 450px) {
+            height: 24px;
+        }
+    }
+
+    &.follow {
+        color: orange;
+
+        &:hover {
+            background: orange;
+            color: white;
+        }
+
+        &:focus {
+            background: orange;
+            color: white;
+            opacity: .7;
+        }
+    };
+
     &.following {
         color: green;
+
+        &:hover {
+            background: green;
+            color: white;
+        }
+
+        &:focus {
+            background: green;
+            color: white;
+            opacity: .7;
+        }
     }
 
     @media (max-width: 800px) {
@@ -158,7 +201,7 @@
             margin: 0 12px;
         }
 
-        // Itune Logo
+        // Alpha Logo
         img {
             height: 33px;
             width: 33px;

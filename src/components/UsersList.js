@@ -58,13 +58,24 @@ class UsersList extends Component {
     };
 
     renderFollowButton(user, follow){
-        const classNames = follow ? 'ui button' : 'ui button following';
+        const { userLoggedIn } = this.props;
+
+        const extraClass = follow ? 'follow' : 'following';
+        const display = userLoggedIn.id !== user.id;
+
+        if(display){
+            return (
+                <div className="content name">
+                    <button className={`ui button ${extraClass}`} onClick={() => this.toggleFollow(user, follow)}>
+                        {follow ? 'Follow' : 'Following'}
+                    </button>
+                </div>
+            );
+        }
 
         return (
             <div className="content name">
-                <button className={classNames} onClick={() => this.toggleFollow(user, follow)}>
-                    {follow ? 'Follow' : 'Following'}
-                </button>
+                <button className={`ui button display-none`}/>
             </div>
         );
     }
@@ -78,7 +89,7 @@ class UsersList extends Component {
             return usersList.map((user, key) => {
                 const { name, group_id, followers } = user;
 
-                const follow = followers.indexOf(userLoggedIn.id) === -1;
+                const follow = userLoggedIn && followers.indexOf(userLoggedIn.id) === -1;
 
                 return (
                     <div className="item" key={key}>

@@ -10,13 +10,17 @@ class LogIn extends Component {
         const { loginUser } = this.props;
 
         loginUser(formValues);
+
+        this.setState({
+            formSubmitted: true
+        });
     };
 
     renderErrorMessage(){
         const { users: { loggedIn } } = this.props;
+        const { formSubmitted } = this.state;
 
-        // TODO - Fix Logged In Error
-        if(!loggedIn){
+        if(!loggedIn && formSubmitted){
             return (
                 <div className="error">
                     <p>

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-    // TODO - Later as extra
-    handleLogOut = () => {};
+    onLogOut = () => {
+        const { handleLogOut } = this.props;
+
+        handleLogOut();
+    };
 
     renderLogOut(){
         const { loggedIn } = this.props;
 
         if(loggedIn){
             return (
-                <a to="#" className="item" onClick={this.handleLogOut}>
+                <a to="#" className="item" onClick={this.onLogOut}>
                     Log Out
                 </a>
             );
