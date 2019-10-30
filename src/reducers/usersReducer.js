@@ -13,6 +13,11 @@ export default(state = {}, action) => {
                 ...state,
                 loggedInUser: action.payload
             };
+        case LOGOUT_USER:
+            return {
+                ...state,
+                loggedInUser: undefined
+            };
         case FETCH_USERS:
             return {
                 ...state,
@@ -22,11 +27,6 @@ export default(state = {}, action) => {
             return {
                 ...state,
                 fetchedUser: action.payload
-            };
-        case LOGOUT_USER:
-            return {
-                ...state,
-                loggedInUser: undefined
             };
         case UPDATE_USER:
             return {

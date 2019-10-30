@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../actions';
+import { loginUser, logoutUser } from '../actions';
 import Header from './Header';
 import LogIn from './LogIn';
 import UsersList from './UsersList';
-import { LOGGED_IN } from '../constants';
 import '../style/index.scss';
 
 class App extends Component {
@@ -13,36 +12,9 @@ class App extends Component {
 
         this.state = {};
 
+        this.handleLogIn = this.handleLogIn.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
     }
-
-    componentDidMount() {
-        const isLoggedIn = !!localStorage.getItem(LOGGED_IN);
-
-        this.setState({
-            isLoggedIn
-        });
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.props !== prevProps){
-            const { users: { loggedInUser } } = this.props;
-
-            if(loggedInUser){
-                this.setState({
-                    isLoggedIn: true
-                });
-            }
-        }
-    }
-
-    handleLogOut = () => {
-        localStorage.removeItem(LOGGED_IN);
-
-        this.setState({
-            isLoggedIn: false
-        });
-    };
 
     handleLogIn = (formValues) => {
         const { loginUser } = this.props;
@@ -50,13 +22,19 @@ class App extends Component {
         loginUser(formValues);
     };
 
-    render() {
-        const { isLoggedIn } = this.state;
+    handleLogOut = () => {
+        const { logoutUser } = this.props;
 
-        if(isLoggedIn){
+        logoutUser();
+    };
+
+    render() {
+        const { users: { loggedInUser } } = this.props;
+
+        if(loggedInUser){
             return (
                 <div className="ui container">
-                    <Header isLoggedIn={isLoggedIn} handleLogOut={this.handleLogOut}/>
+                    <Header isLoggedIn={!!loggedInUser} handleLogOut={this.handleLogOut}/>
                     <UsersList/>
                 </div>
             );
@@ -64,8 +42,8 @@ class App extends Component {
 
         return (
             <div className="ui container">
-                <Header isLoggedIn={isLoggedIn}/>
-                <LogIn handleLogIn={this.handleLogIn} isLoggedIn={isLoggedIn}/>
+                <Header isLoggedIn={!!loggedInUser}/>
+                <LogIn handleLogIn={this.handleLogIn} isLoggedIn={!!loggedInUser}/>
             </div>
         );
     }
@@ -77,5 +55,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    { loginUser }
+    { loginUser, logoutUser }
 )(App);

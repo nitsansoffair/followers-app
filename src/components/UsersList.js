@@ -63,7 +63,7 @@ class UsersList extends Component {
         const { users: { loggedInUser } } = this.props;
 
         const extraClass = follow ? 'follow' : 'following';
-        const display = loggedInUser.id !== user.id;
+        const display = loggedInUser && loggedInUser.id !== user.id;
 
         if(display){
             return (
@@ -155,7 +155,7 @@ class UsersList extends Component {
 const mapStateToProps = (state) => {
     const { users } = state;
 
-    if(users && users.usersList && !users.loggedInUser){
+    if(users && users.usersList){
         const { usersList } = users;
 
         const loggedInId = localStorage.getItem(LOGGED_IN);

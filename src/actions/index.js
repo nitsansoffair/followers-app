@@ -1,8 +1,6 @@
-import _ from 'lodash';
 import api from '../apis/api';
 import history from '../history';
 import {
-    FETCH_GROUP,
     FETCH_GROUPS,
     FETCH_USERS,
     LOGIN_USER,
@@ -20,7 +18,7 @@ export const loginUser = ({ name, password }) => async(dispatch) => {
 
         dispatch({
             type: LOGIN_USER,
-            payload: !!user
+            payload: user
         });
 
         if(user){
@@ -38,6 +36,8 @@ export const logoutUser = () => async(dispatch) => {
             type: LOGOUT_USER,
             payload: ''
         });
+
+        localStorage.removeItem(LOGGED_IN);
 
         history.push('/');
     } catch (e) {
@@ -78,21 +78,6 @@ export const updateUser = (user) => async(dispatch) => {
     }
 };
 
-export const fetchGroup = (id) => async(dispatch) => {
-    try {
-        const response = await api.get(`/groups/${id}`);
-        const { data } = response;
-
-        dispatch({
-            type: FETCH_GROUP,
-            payload: data
-        });
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-
 export const fetchGroups = () => async(dispatch) => {
     try {
         const response = await api.get('/groups');
@@ -102,23 +87,6 @@ export const fetchGroups = () => async(dispatch) => {
             type: FETCH_GROUPS,
             payload: data
         });
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-export const fetchUsersAndGroups = () => async (dispatch, getState) => {
-    try {
-        await dispatch(fetchUsers());
-
-        const state = getState();
-        const { users: { usersList } } = state;
-
-        _.chain(usersList)
-            .map('group_id')
-            .uniq()
-            .forEach((id) => dispatch(fetchGroup(id)))
-            .value();
     } catch (e) {
         console.log(e);
     }
