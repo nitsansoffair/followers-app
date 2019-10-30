@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { loginUser } from '../actions';
 import Header from './Header';
 import LogIn from './LogIn';
 import UsersList from './UsersList';
@@ -16,28 +17,46 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const loggedIn = !!localStorage.getItem(LOGGED_IN);
+        const isLoggedIn = !!localStorage.getItem(LOGGED_IN);
 
         this.setState({
-            loggedIn
+            isLoggedIn
         });
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.props !== prevProps){
+            const { users: { loggedInUser } } = this.props;
+
+            if(loggedInUser){
+                this.setState({
+                    isLoggedIn: true
+                });
+            }
+        }
     }
 
     handleLogOut = () => {
         localStorage.removeItem(LOGGED_IN);
 
         this.setState({
-            loggedIn: false
+            isLoggedIn: false
         });
     };
 
-    render() {
-        const { loggedIn } = this.state;
+    handleLogIn = (formValues) => {
+        const { loginUser } = this.props;
 
-        if(loggedIn){
+        loginUser(formValues);
+    };
+
+    render() {
+        const { isLoggedIn } = this.state;
+
+        if(isLoggedIn){
             return (
                 <div className="ui container">
-                    <Header loggedIn={loggedIn} handleLogOut={this.handleLogOut}/>
+                    <Header isLoggedIn={isLoggedIn} handleLogOut={this.handleLogOut}/>
                     <UsersList/>
                 </div>
             );
@@ -45,16 +64,18 @@ class App extends Component {
 
         return (
             <div className="ui container">
-                <Header loggedIn={loggedIn}/>
-                <LogIn/>
+                <Header isLoggedIn={isLoggedIn}/>
+                <LogIn handleLogIn={this.handleLogIn} isLoggedIn={isLoggedIn}/>
             </div>
         );
     }
 }
 
-const mapStateToProps = state => state;
+const mapStateToProps = (state) => {
+    return state;
+};
 
 export default connect(
     mapStateToProps,
-    {  }
+    { loginUser }
 )(App);

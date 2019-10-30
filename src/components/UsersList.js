@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions';
 import { fetchUsers, fetchGroups } from '../actions';
-import {LOGGED_IN} from "../constants";
+import { LOGGED_IN } from '../constants';
 
 class UsersList extends Component {
     componentDidMount() {
@@ -40,7 +40,7 @@ class UsersList extends Component {
     };
 
     toggleFollow = (user, follow) => {
-        const { updateUser, userLoggedIn: { id } } = this.props;
+        const { updateUser, users: { loggedInUser: { id } } } = this.props;
         var { followers } = user;
 
         if(follow){
@@ -58,10 +58,12 @@ class UsersList extends Component {
     };
 
     renderFollowButton(user, follow){
-        const { userLoggedIn } = this.props;
+        // TODO - Unfollow on following hover
+
+        const { users: { loggedInUser } } = this.props;
 
         const extraClass = follow ? 'follow' : 'following';
-        const display = userLoggedIn.id !== user.id;
+        const display = loggedInUser.id !== user.id;
 
         if(display){
             return (
@@ -81,15 +83,15 @@ class UsersList extends Component {
     }
 
     renderList(){
-        const { users, userLoggedIn } = this.props;
+        const { users } = this.props;
 
         if(users && users.usersList){
-            const { usersList } = users;
+            const { usersList, loggedInUser } = users;
 
             return usersList.map((user, key) => {
                 const { name, group_id, followers } = user;
 
-                const follow = userLoggedIn && followers.indexOf(userLoggedIn.id) === -1;
+                const follow = loggedInUser && followers.indexOf(loggedInUser.id) === -1;
 
                 return (
                     <div className="item" key={key}>
@@ -111,10 +113,10 @@ class UsersList extends Component {
     }
 
     renderHello(){
-        const { userLoggedIn } = this.props;
+        const { users: { loggedInUser } } = this.props;
 
-        if(userLoggedIn){
-            const { name } = userLoggedIn;
+        if(loggedInUser){
+            const { name } = loggedInUser;
 
             return (
                 <h3>
@@ -153,15 +155,20 @@ class UsersList extends Component {
 const mapStateToProps = (state) => {
     const { users } = state;
 
-    if(users && users.usersList){
+    if(users && users.usersList && !users.loggedInUser){
         const { usersList } = users;
 
         const loggedInId = localStorage.getItem(LOGGED_IN);
-        const userLoggedIn = usersList.find(({ id }) => id.toString() === loggedInId);
+        const loggedInUser = usersList.find(({ id }) => id.toString() === loggedInId);
+
+        const transformedUsers = {
+            ...users,
+            loggedInUser
+        };
 
         return {
             ...state,
-            userLoggedIn
+            users: transformedUsers
         };
     }
 

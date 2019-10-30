@@ -8,9 +8,9 @@ class Header extends Component {
     };
 
     renderLogOut(){
-        const { loggedIn } = this.props;
+        const { isLoggedIn } = this.props;
 
-        if(loggedIn){
+        if(isLoggedIn){
             return (
                 <a to="#" className="item" onClick={this.onLogOut}>
                     Log Out

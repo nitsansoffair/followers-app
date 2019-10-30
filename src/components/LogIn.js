@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../actions';
 import Form from './Form';
 
 class LogIn extends Component {
     state = {};
 
     onSubmit = (formValues) => {
-        const { loginUser } = this.props;
+        const { handleLogIn } = this.props;
 
-        loginUser(formValues);
+        handleLogIn(formValues);
 
         this.setState({
             formSubmitted: true
@@ -17,10 +16,10 @@ class LogIn extends Component {
     };
 
     renderErrorMessage(){
-        const { users: { loggedIn } } = this.props;
+        const { isLoggedIn } = this.props;
         const { formSubmitted } = this.state;
 
-        if(!loggedIn && formSubmitted){
+        if(!isLoggedIn && formSubmitted){
             return (
                 <div className="error">
                     <p>
@@ -53,5 +52,5 @@ const mapStateToProps = ({ users }) => {
 
 export default connect(
     mapStateToProps,
-    { loginUser }
+    {  }
 )(LogIn);
