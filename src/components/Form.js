@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import test_ids from '../test/test_ids';
 
 class Form extends React.Component {
     renderError({ touched, error }) {
@@ -37,6 +38,7 @@ class Form extends React.Component {
 
     render() {
         const { handleSubmit } = this.props;
+        const { log_in_form: { submit_button } } = test_ids;
 
         return (
             <form onSubmit={handleSubmit(this.onSubmit)} className="ui form error">
@@ -54,7 +56,7 @@ class Form extends React.Component {
                     placeholder="Enter password"
                     label="Password"
                 />
-                <button className="ui button">
+                <button data-testid={submit_button} className="ui button">
                     Log In
                 </button>
             </form>

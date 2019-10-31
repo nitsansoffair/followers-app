@@ -1,0 +1,8 @@
+{
+  "users_list_page": "users_list_page",
+  "log_in_form": {
+    "name_input": "name",
+    "password_input": "password",
+    "submit_button": "submit_button"
+  }
+}

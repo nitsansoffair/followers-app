@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { updateUser } from '../actions';
 import { fetchUsers, fetchGroups } from '../actions';
 import { LOGGED_IN } from '../constants';
+import test_ids from '../test/test_ids';
+import {dataKey} from "redux-form/lib/util/eventConsts";
 
 class UsersList extends Component {
     componentDidMount() {
@@ -58,7 +60,6 @@ class UsersList extends Component {
     };
 
     renderFollowButton(user, follow){
-        // TODO - Unfollow on following hover
         const { users: { loggedInUser } } = this.props;
 
         const extraClass = follow ? 'follow' : 'following';
@@ -136,8 +137,10 @@ class UsersList extends Component {
     }
 
     render() {
+        const { users_list_page } = test_ids;
+
         return (
-            <div className="ui celled list">
+            <div className="ui celled list" data-testid={users_list_page}>
                 {this.renderHello()}
                 <h2>Choose Users to follow</h2>
                 <div className="item title">
