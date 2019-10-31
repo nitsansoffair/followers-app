@@ -13,7 +13,7 @@
 
 // Form inputs
 .ui.form {
-    input:not([type]) {
+    input[type=text], input[type=password] {
         width: 350px;
 
         &:focus {
@@ -24,13 +24,19 @@
             width: 250px;
         }
     }
+
+    // Form Label Text
+    .field>label {
+        opacity: 1;
+        font-size: 16px;
+    }
 }
 
 // Error message
 .error {
-  color: black;
-  font-weight: 700;
-  margin: 10px 0;
+    margin: 10px 0;
+    font-weight: 700;
+    color: red;
 }
 
 // Form buttons
@@ -266,4 +272,9 @@
             }
         }
     }
+}
+
+// Log In Title
+h1 {
+    margin: 20px 0;
 }

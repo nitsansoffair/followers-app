@@ -16,7 +16,7 @@ class Form extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta, placeholder }) => {
+    renderInput = ({ input, label, meta, placeholder, type }) => {
         const { error, touched } = meta;
 
         const className = `field ${error && touched ? '' : ''}`;
@@ -25,7 +25,7 @@ class Form extends React.Component {
                 <label>
                     {label}
                 </label>
-                <input data-testid={input.name} placeholder={placeholder} {...input} autoComplete="off"/>
+                <input data-testid={input.name} placeholder={placeholder} {...input} autoComplete="off" type={type}/>
                 {this.renderError(meta)}
             </div>
         );
@@ -41,7 +41,6 @@ class Form extends React.Component {
         const { handleSubmit } = this.props;
         const { log_in_form: { submit_button } } = test_ids;
 
-        // TODO - Password input
         return (
             <form onSubmit={handleSubmit(this.onSubmit)} className="ui form error">
                 <Field
