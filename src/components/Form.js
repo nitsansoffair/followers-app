@@ -41,6 +41,7 @@ class Form extends React.Component {
         const { handleSubmit } = this.props;
         const { log_in_form: { submit_button } } = test_ids;
 
+        // TODO - Password input
         return (
             <form onSubmit={handleSubmit(this.onSubmit)} className="ui form error">
                 <Field

@@ -13,7 +13,7 @@
 
 // Form inputs
 .ui.form {
-    input:not([type]), input[type=text] {
+    input:not([type]) {
         width: 350px;
 
         &:focus {
@@ -70,25 +70,31 @@
         }
 
         &:focus {
-            background: orange;
-            color: white;
-            opacity: .7;
+            background: white;
+            color: orange;
+        }
+
+        @media (max-width: 450px) {
+            width: 75px;
+            padding: 4px;
+            font-size: 12px;
         }
     };
 
     &.following {
+        background: white;
         color: green;
         border: 1px solid green;
+        font-weight: unset;
 
         &:hover {
-            background: white;
+            background: darkred;
             border: 1px solid red;
         }
 
         &:focus {
             background: white;
             color: green;
-            opacity: .7;
         }
 
         // Hover Change Text Effect
@@ -121,6 +127,12 @@
             transition-delay: .1s;
             color: red;
         }
+
+        @media (max-width: 450px) {
+            width: 75px;
+            padding: 4px;
+            font-size: 12px;
+        }
     }
 
     @media (max-width: 800px) {
@@ -132,11 +144,6 @@
         padding: 7px;
     }
 
-    @media (max-width: 450px) {
-        width: 75px;
-        padding: 4px;
-    }
-
     &:hover {
         background: black;
         color: white;
@@ -145,27 +152,35 @@
     &:focus {
         background: black;
         color: white;
-        opacity: .7;
+        opacity: .5;
     }
 }
 
 // Users list
 .ui.celled.list>.item {
     border-top: none;
-    padding: 8px 0;
+    padding: 2px 0 !important;
     display: flex;
 
-    &.title {
-        font-weight: 700;
+    h2 {
+        margin: 10px;
     }
 
-    &:first-child {
-        padding: 8px 0;
+    &.title {
+        margin: 0 0 15px 0;
+        font-weight: 700;
+
+        .name {
+            margin: 0 20px 0 0;
+
+            @media (max-width: 450px) {
+                margin: 0 15px 0 0;
+            }
+        }
     }
 
     &:last-child {
         border-bottom: none;
-        padding: 8px 0;
     }
 
     &>.content{
@@ -174,14 +189,29 @@
         font-size: 18px;
 
         &.name {
+            width: 115px;
             text-align: unset !important;
+
+            @media (max-width: 800px) {
+                width: 80px;
+            }
+
+            @media (max-width: 450px) {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            width: 150px;
         }
 
         @media (max-width: 650px) {
+            width: 150px;
             font-size: 14px;
         }
 
         @media (max-width: 450px) {
+            width: 90px;
             font-size: 12px;
         }
     }
@@ -190,11 +220,11 @@
         margin: 3px 8px 0 0;
 
         @media (max-width: 650px) {
-            margin: 1.5px 8px 0 0;
+            margin: 1.5px 7px 0 0;
         }
 
         @media (max-width: 450px) {
-            margin: .5px 8px 0 0;
+            margin: .5px 6px 0 0;
         }
 
         &.display-none {
@@ -223,26 +253,12 @@
         opacity: 1;
     }
 
-    div.item {
-        font-weight: 700;
-    }
-
     .item {
         margin: 0 20px;
         padding: 15px 0;
 
-        @media (max-width: 450px) {
-            margin: 0 12px;
-        }
-
-        // Alpha Logo
-        img {
-            height: 33px;
-            width: 33px;
-        }
-
         &.img-item {
-            padding: 8px 0 !important;
+            padding: 7px 0 !important;
 
             &:hover {
                 border-color: white;

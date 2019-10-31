@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/groupsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/groupsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/usersReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test_ids.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_ids.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572526805687</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Code Styling">
+      <created>1572529427846</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1572529427847</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,11 +308,11 @@
     <MESSAGE value="Migrate Log Out Logic to Action" />
     <MESSAGE value="Migrate Invalid Credentials Error to Actions &amp; Reducers" />
     <MESSAGE value="Hover Unfollow Effect" />
-    <MESSAGE value="Code Styling" />
     <MESSAGE value="Image Icon" />
     <MESSAGE value="Title" />
     <MESSAGE value="Simple Tests" />
     <MESSAGE value="Finish Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish Tests" />
+    <MESSAGE value="Code Styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Styling" />
   </component>
 </project>

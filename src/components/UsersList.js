@@ -147,7 +147,6 @@ class UsersList extends Component {
                 {this.renderHello()}
                 <h2>{choose_users_to_follow_message}</h2>
                 <div className="item title">
-                    <i className="fas fa-user display-none"/>
                     <div className="content name">
                         {name_title}
                     </div>
