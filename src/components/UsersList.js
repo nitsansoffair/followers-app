@@ -4,7 +4,6 @@ import { updateUser } from '../actions';
 import { fetchUsers, fetchGroups } from '../actions';
 import { LOGGED_IN } from '../constants';
 import test_ids from '../test/test_ids';
-import {dataKey} from "redux-form/lib/util/eventConsts";
 
 class UsersList extends Component {
     componentDidMount() {
@@ -61,6 +60,7 @@ class UsersList extends Component {
 
     renderFollowButton(user, follow){
         const { users: { loggedInUser } } = this.props;
+        const { follow_button } = test_ids;
 
         const extraClass = follow ? 'follow' : 'following';
         const display = loggedInUser && loggedInUser.id !== user.id;
@@ -74,6 +74,7 @@ class UsersList extends Component {
                         className={`ui button ${extraClass}`}
                         onClick={() => this.toggleFollow(user, follow)}
                         data-hover="Unfollow"
+                        data-testid={`${follow_button}_${user.id}`}
                     >
                         <span>
                             {buttonText}

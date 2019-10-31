@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/test_ids.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test_ids.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_ids.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,21 +56,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Create App.Should log in successfully">
-    <configuration name="Create App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
-      <test-names>
-        <test-name value="Create App" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Create App.Should display list only if local storage logged in key is set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Create App.Should log in and log out successfully">
+    <configuration name="Create App.Should fetch groups" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -82,11 +67,11 @@
       <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
       <test-names>
         <test-name value="Create App" />
-        <test-name value="Should display list only if local storage logged in key is set" />
+        <test-name value="Should fetch groups" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Create App.Should display users list if local storage key is set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Create App.Should fetch users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -96,11 +81,11 @@
       <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
       <test-names>
         <test-name value="Create App" />
-        <test-name value="Should display users list if local storage key is set" />
+        <test-name value="Should fetch users" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Create App.Should log in successfully" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Create App.Should log in and log out successfully" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -110,7 +95,35 @@
       <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
       <test-names>
         <test-name value="Create App" />
-        <test-name value="Should log in successfully" />
+        <test-name value="Should log in and log out successfully" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Create App.Should log out successfully" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
+      <test-names>
+        <test-name value="Create App" />
+        <test-name value="Should log out successfully" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Create App.Should update user followers" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
+      <test-names>
+        <test-name value="Create App" />
+        <test-name value="Should update user followers" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -129,10 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Create App.Should log in successfully" />
-        <item itemvalue="Jest.Create App.Should display users list if local storage key is set" />
-        <item itemvalue="Jest.Create App.Should display list only if local storage logged in key is set" />
-        <item itemvalue="Jest.Create App" />
+        <item itemvalue="Jest.Create App.Should log in and log out successfully" />
+        <item itemvalue="Jest.Create App.Should log out successfully" />
+        <item itemvalue="Jest.Create App.Should fetch groups" />
+        <item itemvalue="Jest.Create App.Should fetch users" />
+        <item itemvalue="Jest.Create App.Should update user followers" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572467646414</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Simple Tests">
+      <created>1572481774259</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572481774259</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +295,7 @@
     <MESSAGE value="Code Styling" />
     <MESSAGE value="Image Icon" />
     <MESSAGE value="Title" />
-    <option name="LAST_COMMIT_MESSAGE" value="Title" />
+    <MESSAGE value="Simple Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple Tests" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import test_ids from '../test/test_ids';
 
 class Header extends Component {
     onLogOut = () => {
@@ -9,10 +10,11 @@ class Header extends Component {
 
     renderLogOut(){
         const { isLoggedIn } = this.props;
+        const { log_out_link } = test_ids;
 
         if(isLoggedIn){
             return (
-                <a to="#" className="item" onClick={this.onLogOut}>
+                <a data-testid={log_out_link} to="#" className="item" onClick={this.onLogOut}>
                     Log Out
                 </a>
             );
