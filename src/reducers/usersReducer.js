@@ -1,9 +1,9 @@
 import {
     FETCH_USERS,
     LOGIN_USER,
-    FETCH_USER,
     LOGOUT_USER,
-    UPDATE_USER, LOGIN_USER_INVALID
+    UPDATE_USER,
+    LOGIN_USER_INVALID
 } from '../actions/types';
 
 export default(state = {}, action) => {
@@ -28,11 +28,6 @@ export default(state = {}, action) => {
             return {
                 ...state,
                 usersList: action.payload
-            };
-        case FETCH_USER:
-            return {
-                ...state,
-                fetchedUser: action.payload
             };
         case UPDATE_USER:
             return {

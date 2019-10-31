@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateUser } from '../actions';
 import { fetchUsers, fetchGroups } from '../actions';
 import { LOGGED_IN } from '../constants';
+import data from '../data/data';
 import test_ids from '../test/test_ids';
 
 class UsersList extends Component {
@@ -60,21 +61,20 @@ class UsersList extends Component {
 
     renderFollowButton(user, follow){
         const { users: { loggedInUser } } = this.props;
-        const { follow_button } = test_ids;
+        const { users_list_page: { follow_button_text, following_button_text, unfollow_button_text } } = data;
 
-        const extraClass = follow ? 'follow' : 'following';
+        const extraClass = follow ? follow_button_text : following_button_text;
         const display = loggedInUser && loggedInUser.id !== user.id;
 
         if(display){
-            const buttonText = follow ? 'Follow' : 'Following';
+            const buttonText = follow ? follow_button_text : following_button_text;
 
             return (
                 <div className="content name">
                     <button
                         className={`ui button ${extraClass}`}
                         onClick={() => this.toggleFollow(user, follow)}
-                        data-hover="Unfollow"
-                        data-testid={`${follow_button}_${user.id}`}
+                        data-hover={unfollow_button_text}
                     >
                         <span>
                             {buttonText}
@@ -123,13 +123,14 @@ class UsersList extends Component {
 
     renderHello(){
         const { users: { loggedInUser } } = this.props;
+        const { users_list_page: { welcome_message } } = data;
 
         if(loggedInUser){
             const { name } = loggedInUser;
 
             return (
                 <h3>
-                    Welcome, {name}
+                    {welcome_message} {name}
                 </h3>
             );
         }
@@ -138,22 +139,23 @@ class UsersList extends Component {
     }
 
     render() {
+        const { users_list_page: { choose_users_to_follow_message, name_title, group_title, followers_title } } = data;
         const { users_list_page } = test_ids;
 
         return (
             <div className="ui celled list" data-testid={users_list_page}>
                 {this.renderHello()}
-                <h2>Choose Users to follow</h2>
+                <h2>{choose_users_to_follow_message}</h2>
                 <div className="item title">
                     <i className="fas fa-user display-none"/>
                     <div className="content name">
-                        Name
+                        {name_title}
                     </div>
                     <div className="content">
-                        Group Name
+                        {group_title}
                     </div>
                     <div className="content">
-                        # Followers
+                        {followers_title}
                     </div>
                     <div className="content name"/>
                 </div>

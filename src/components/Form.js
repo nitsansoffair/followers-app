@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import data from '../data/data';
 import test_ids from '../test/test_ids';
 
 class Form extends React.Component {
@@ -65,14 +66,15 @@ class Form extends React.Component {
 }
 
 const validate = ({ name, password }) => {
+    const { error_name, error_password } = data;
     const errors = {};
 
     if(!name){
-        errors.name = "Please enter Full Name";
+        errors.name = error_name;
     }
 
     if(!password){
-        errors.password = "Please enter Password";
+        errors.password = error_password;
     }
 
     return errors;

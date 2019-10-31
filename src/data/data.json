@@ -1,1 +1,19 @@
-{}
+{
+  "error_name": "Please enter Full Name",
+  "error_password": "Please enter Password",
+  "log_out_text": "Log Out",
+  "credentials_is_not_valid_error": "Credentials is not valid",
+  "must_be_signed_in_message": "Must be signed in",
+  "log_in_title": "Log In",
+  "log_in_button_text": "Log In",
+  "users_list_page": {
+    "choose_users_to_follow_message": "Choose Users to follow",
+    "name_title": "Name",
+    "group_title": "Group Name",
+    "followers_title": "Followers",
+    "welcome_message": "Welcome, ",
+    "follow_button_text": "follow",
+    "following_button_text": "following",
+    "unfollow_button_text": "Unfollow"
+  }
+}

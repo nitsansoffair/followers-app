@@ -5,6 +5,5 @@
     "password_input": "password",
     "submit_button": "submit_button"
   },
-  "log_out_link": "log_out_link",
-  "follow_button": "follow_button"
+  "log_out_link": "log_out_link"
 }

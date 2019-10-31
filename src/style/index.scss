@@ -40,6 +40,7 @@
     padding: 12px;
     position: relative;
     border: 1px solid black;
+    color: black;
 
     &.display-none, &.display-none:hover, &.display-none:focus {
         opacity: 0;
@@ -95,7 +96,6 @@
             transition: .2s;
         }
 
-        //TODO - Code Styling
         &:before, &:after {
             position: absolute;
             left: 0;
@@ -199,10 +199,10 @@
 
         &.display-none {
             opacity: 0;
+            margin: 0;
         }
     }
 }
-
 
 // Navbar
 .ui.menu:not(.vertical) .right.menu {
@@ -214,7 +214,6 @@
     }
 }
 
-// Navbar
 .ui.secondary.pointing.menu {
     border-bottom: none;
 

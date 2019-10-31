@@ -4,7 +4,7 @@ import usersReducer from './usersReducer';
 import groupsReducer from './groupsReducer';
 
 export default combineReducers({
+    form: formReducer,
     users: usersReducer,
-    groups: groupsReducer,
-    form: formReducer
+    groups: groupsReducer
 });

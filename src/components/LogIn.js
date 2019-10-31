@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Form from './Form';
+import data from '../data/data';
 
 class LogIn extends Component {
     state = {};
@@ -13,12 +14,13 @@ class LogIn extends Component {
 
     renderErrorMessage(){
         const { invalidCredentials } = this.props;
+        const { credentials_is_not_valid_error } = data;
 
         if(invalidCredentials){
             return (
                 <div className="error">
                     <p>
-                        Credentials is not valid
+                        {credentials_is_not_valid_error}
                     </p>
                 </div>
             );
@@ -26,13 +28,15 @@ class LogIn extends Component {
     }
 
     render() {
+        const { must_be_signed_in_message, log_in_title, log_in_button_text } = data;
+
         return (
             <div>
                 <h3>
-                    Must be signed in
+                    {must_be_signed_in_message}
                 </h3>
-                <h1>Log In</h1>
-                <Form onSubmit={this.onSubmit} submit_text="Log In"/>
+                <h1>{log_in_title}</h1>
+                <Form onSubmit={this.onSubmit} submit_text={log_in_button_text}/>
                 {this.renderErrorMessage()}
             </div>
         );
