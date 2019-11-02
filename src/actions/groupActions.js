@@ -1,13 +1,13 @@
-import api from '../apis/api';
+import { getGroupsRequest } from '../apis/api';
 import { FETCH_GROUPS } from './types';
 
 export const fetchGroups = () => async(dispatch) => {
     try {
-        const { data } = await api.get('/groups');
+        const groups = await getGroupsRequest();
 
         dispatch({
             type: FETCH_GROUPS,
-            payload: data
+            payload: groups
         });
     } catch (e) {
         console.log(e);

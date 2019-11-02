@@ -18,23 +18,15 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const isLoggedIn = localStorage.getItem(LOGGED_IN);
-
         this.setState({
-            isLoggedIn
+            isLoggedIn: localStorage.getItem(LOGGED_IN)
         });
     }
 
-    handleLogIn = (formValues) => {
-        const { loginUser } = this.props;
-
-        loginUser(formValues);
-    };
+    handleLogIn = (formValues) => this.props.loginUser(formValues);
 
     handleLogOut = () => {
-        const { logoutUser } = this.props;
-
-        logoutUser();
+        this.props.logoutUser();
 
         this.setState({
             isLoggedIn: false
@@ -44,11 +36,12 @@ class App extends Component {
     render() {
         const { users: { loggedInUser, invalidCredentials } } = this.props;
         const { isLoggedIn } = this.state;
+        const isUserLoggedIn = !!loggedInUser || isLoggedIn;
 
-        if(loggedInUser || isLoggedIn){
+        if(isUserLoggedIn){
             return (
                 <div className="ui container">
-                    <Header isLoggedIn={!!loggedInUser || isLoggedIn} handleLogOut={this.handleLogOut}/>
+                    <Header isLoggedIn={isUserLoggedIn} handleLogOut={this.handleLogOut}/>
                     <UsersList/>
                 </div>
             );
@@ -56,7 +49,7 @@ class App extends Component {
 
         return (
             <div className="ui container">
-                <Header isLoggedIn={!!loggedInUser || isLoggedIn}/>
+                <Header isLoggedIn={isUserLoggedIn}/>
                 <LogIn handleLogIn={this.handleLogIn} invalidCredentials={invalidCredentials}/>
             </div>
         );

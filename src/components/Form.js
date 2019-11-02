@@ -17,11 +17,8 @@ class Form extends React.Component {
     }
 
     renderInput = ({ input, label, meta, placeholder, type }) => {
-        const { error, touched } = meta;
-
-        const className = `field ${error && touched ? '' : ''}`;
         return (
-            <div className={className}>
+            <div className='field'>
                 <label>
                     {label}
                 </label>
@@ -31,18 +28,11 @@ class Form extends React.Component {
         );
     };
 
-    onSubmit = (formValues) => {
-        const { onSubmit } = this.props;
-
-        onSubmit(formValues);
-    };
+    onSubmit = (formValues) => this.props.onSubmit(formValues);
 
     render() {
-        const { handleSubmit } = this.props;
-        const { log_in_form: { submit_button } } = test_ids;
-
         return (
-            <form onSubmit={handleSubmit(this.onSubmit)} className="ui form error">
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <Field
                     name="name"
                     type="text"
@@ -57,7 +47,7 @@ class Form extends React.Component {
                     placeholder="Enter password"
                     label="Password"
                 />
-                <button data-testid={submit_button} className="ui button">
+                <button data-testid={test_ids.log_in_form.submit_button} className="ui button">
                     Log In
                 </button>
             </form>
@@ -66,15 +56,14 @@ class Form extends React.Component {
 }
 
 const validate = ({ name, password }) => {
-    const { error_name, error_password } = data;
     const errors = {};
 
     if(!name){
-        errors.name = error_name;
+        errors.name = data.error_name;
     }
 
     if(!password){
-        errors.password = error_password;
+        errors.password = data.error_password;
     }
 
     return errors;

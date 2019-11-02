@@ -3,21 +3,13 @@ import data from '../data/data';
 import test_ids from '../test/test_ids';
 
 class Header extends Component {
-    onLogOut = () => {
-        const { handleLogOut } = this.props;
-
-        handleLogOut();
-    };
+    onLogOut = () => this.props.handleLogOut();
 
     renderLogOut(){
-        const { isLoggedIn } = this.props;
-        const { log_out_text } = data;
-        const { log_out_link } = test_ids;
-
-        if(isLoggedIn){
+        if(this.props.isLoggedIn){
             return (
-                <a data-testid={log_out_link} to="#" className="item" onClick={this.onLogOut}>
-                    {log_out_text}
+                <a data-testid={test_ids.log_out_link} to="#" className="item" onClick={this.onLogOut}>
+                    {data.log_out_text}
                 </a>
             );
         }

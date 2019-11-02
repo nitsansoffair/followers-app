@@ -1,4 +1,4 @@
-import api from '../apis/api';
+import { getUsersRequest, updateUserRequest } from '../apis/api';
 import history from '../history';
 import {
     FETCH_USERS,
@@ -11,9 +11,8 @@ import { LOGGED_IN } from '../constants';
 
 export const loginUser = ({ name, password }) => async(dispatch) => {
     try {
-        const { data } = await api.get('/users');
-
-        const user = data.find((user) => user.name === name && user.password === password);
+        const users = await getUsersRequest();
+        const user = users.find((user) => user.name === name && user.password === password);
 
         if(user){
             dispatch({
@@ -52,12 +51,11 @@ export const logoutUser = () => async(dispatch) => {
 
 export const fetchUsers = () => async(dispatch) => {
     try {
-        const response = await api.get('/users');
-        const { data } = response;
+        const users = await getUsersRequest();
 
         dispatch({
             type: FETCH_USERS,
-            payload: data
+            payload: users
         });
     } catch (e) {
         console.log(e);
@@ -66,13 +64,11 @@ export const fetchUsers = () => async(dispatch) => {
 
 export const updateUser = (user) => async(dispatch) => {
     try {
-        const { data } = await api.put(`/users/${user.id}`, {
-            ...user
-        });
+        const updatedUser = await updateUserRequest(user);
 
         dispatch({
             type: UPDATE_USER,
-            payload: data
+            payload: updatedUser
         });
     } catch (e) {
         console.log(e);
