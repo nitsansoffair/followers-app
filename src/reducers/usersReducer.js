@@ -1,9 +1,9 @@
 import {
-    FETCH_USERS,
     LOGIN_USER,
+    LOGIN_USER_INVALID,
     LOGOUT_USER,
+    FETCH_USERS,
     UPDATE_USER,
-    LOGIN_USER_INVALID
 } from '../actions/types';
 
 export default(state = {}, action) => {

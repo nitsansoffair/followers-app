@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e446928-d782-42ba-89ec-057bc36d6d53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/groupActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UsersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/index.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="tests" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../itunes-client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,7 +61,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Create App.Should log in and log out successfully">
+  <component name="RunManager" selected="Jest.Create App">
+    <configuration name="Create App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
+      <test-names>
+        <test-name value="Create App" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Create App.Should fetch groups" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -114,20 +131,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Create App.Should update user followers" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/test/index.test.js" />
-      <test-names>
-        <test-name value="Create App" />
-        <test-name value="Should update user followers" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -143,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Create App" />
         <item itemvalue="Jest.Create App.Should log in and log out successfully" />
         <item itemvalue="Jest.Create App.Should log out successfully" />
         <item itemvalue="Jest.Create App.Should fetch groups" />
         <item itemvalue="Jest.Create App.Should fetch users" />
-        <item itemvalue="Jest.Create App.Should update user followers" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +165,9 @@
       <option name="presentableId" value="Default" />
       <updated>1572437409436</updated>
       <workItem from="1572437411440" duration="6078000" />
+      <workItem from="1572633942859" duration="667000" />
+      <workItem from="1572697949687" duration="9000" />
+      <workItem from="1572723748585" duration="2119000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Create-React-App Inital Files">
       <created>1572438296193</created>
@@ -289,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572534214461</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix Password Input, Title Margins, Error Colors, Scss Code Styling, etc">
+      <created>1572535215822</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1572535215822</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +313,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -320,6 +335,7 @@
     <MESSAGE value="Finish Tests" />
     <MESSAGE value="Code Styling" />
     <MESSAGE value="Scss Code Styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scss Code Styling" />
+    <MESSAGE value="Fix Password Input, Title Margins, Error Colors, Scss Code Styling, etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Password Input, Title Margins, Error Colors, Scss Code Styling, etc" />
   </component>
 </project>

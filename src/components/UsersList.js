@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateUser } from '../actions';
-import { fetchUsers, fetchGroups } from '../actions';
+import { fetchUsers, updateUser } from '../actions/userActions';
+import { fetchGroups } from '../actions/groupActions';
 import { LOGGED_IN } from '../constants';
 import data from '../data/data';
 import test_ids from '../test/test_ids';
@@ -43,20 +43,27 @@ class UsersList extends Component {
 
     toggleFollow = (user, follow) => {
         const { updateUser, users: { loggedInUser: { id } } } = this.props;
-        var { followers } = user;
+        const { followers } = user;
 
         if(follow){
-            followers.push(id);
+            const transformedUser = {
+                ...user,
+                followers: [
+                    ...followers,
+                    id
+                ]
+            };
+
+            updateUser(transformedUser);
+
         } else {
-            followers = followers.filter((followerId) => followerId !== id);
+            const transformedUser = {
+                ...user,
+                followers: followers.filter((followerId) => followerId !== id)
+            };
+
+            updateUser(transformedUser);
         }
-
-        const transformedUser = {
-            ...user,
-            followers
-        };
-
-        updateUser(transformedUser);
     };
 
     renderFollowButton(user, follow){
@@ -99,7 +106,6 @@ class UsersList extends Component {
 
             return usersList.map((user, key) => {
                 const { name, group_id, followers } = user;
-
                 const follow = loggedInUser && followers.indexOf(loggedInUser.id) === -1;
 
                 return (
@@ -164,45 +170,37 @@ class UsersList extends Component {
     }
 }
 
+const sortUsers = (user1, user2) => {
+    if(user1.name < user2.name){
+        return -1;
+    } else if (user1.name > user2.name){
+        return 1;
+    }
+
+    return 0;
+};
+
 const mapStateToProps = (state) => {
     const { users } = state;
     const { usersList } = users;
 
-    var transformedUsers = users;
-
     if(usersList){
-        const sortedUsers = usersList.sort((user1, user2) => {
-            if(user1.name < user2.name){
-                return -1;
-            } else if (user1.name > user2.name){
-                return 1;
-            }
-
-            return 0;
-        });
-
-        transformedUsers = {
-            ...users,
-            usersList: sortedUsers
-        };
-    }
-
-    if(users && users.usersList){
-        const { usersList } = users;
-
         const loggedInId = localStorage.getItem(LOGGED_IN);
         const loggedInUser = usersList.find(({ id }) => id.toString() === loggedInId);
 
-        transformedUsers = {
-            ...transformedUsers,
+        const transformedUsers = {
+            ...users,
+            usersList: usersList.sort(sortUsers),
             loggedInUser,
+        };
+
+        return {
+            ...state,
+            users: transformedUsers
         };
     }
 
-    return {
-        ...state,
-        users: transformedUsers
-    };
+    return state;
 };
 
 export default connect(

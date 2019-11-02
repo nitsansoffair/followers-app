@@ -1,15 +1,15 @@
 import React from 'react';
-import { cleanup, render, fireEvent, waitForElement } from '@testing-library/react';
 import { applyMiddleware, compose, createStore } from 'redux';
 import reduxThunk from 'redux-thunk';
-import reducers from '../reducers';
 import { Provider } from 'react-redux';
+import reducers from '../reducers';
+import { cleanup, render, fireEvent, waitForElement } from '@testing-library/react';
 import api from '../apis/api';
 import App from '../components/App';
 import test_ids from './test_ids';
 
 describe('Create App', () => {
-    var component;
+    let component;
 
     afterEach(cleanup);
 

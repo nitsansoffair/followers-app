@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser, logoutUser } from '../actions';
+import { loginUser, logoutUser } from '../actions/userActions';
 import Header from './Header';
 import LogIn from './LogIn';
 import UsersList from './UsersList';

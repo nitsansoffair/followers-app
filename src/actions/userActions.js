@@ -1,7 +1,6 @@
 import api from '../apis/api';
 import history from '../history';
 import {
-    FETCH_GROUPS,
     FETCH_USERS,
     LOGIN_USER,
     LOGOUT_USER,
@@ -12,8 +11,7 @@ import { LOGGED_IN } from '../constants';
 
 export const loginUser = ({ name, password }) => async(dispatch) => {
     try {
-        const response = await api.get('/users');
-        const { data } = response;
+        const { data } = await api.get('/users');
 
         const user = data.find((user) => user.name === name && user.password === password);
 
@@ -68,30 +66,12 @@ export const fetchUsers = () => async(dispatch) => {
 
 export const updateUser = (user) => async(dispatch) => {
     try {
-        const { id } = user;
-
-        const response = await api.put(`/users/${id}`, {
+        const { data } = await api.put(`/users/${user.id}`, {
             ...user
         });
 
-        const { data } = response;
-
         dispatch({
             type: UPDATE_USER,
-            payload: data
-        });
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-export const fetchGroups = () => async(dispatch) => {
-    try {
-        const response = await api.get('/groups');
-        const { data } = response;
-
-        dispatch({
-            type: FETCH_GROUPS,
             payload: data
         });
     } catch (e) {
